@@ -1,0 +1,108 @@
+#include<stdio.h>
+void main()
+{
+  while(1)
+  {
+    int ch,i,j,pos,n,a[50],k,tosearch,found,flag;
+    printf("enter 1 for insertion:\n");
+    printf("enter 2 for deletion:\n");
+    printf("enter 3 for traversal:\n");
+    printf("enter 4 for search:\n");
+    printf("enter your choice:");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+    case 1: printf("enter the number of elements:");
+            scanf("%d",&n);
+            printf("enter the desired element:");
+            for(i=0;i<=n-1;i++)
+             {
+              scanf("%d",&a[i]);
+             }
+            printf("you entered:");
+            for(i=0;i<=n-1;i++)
+            {
+             printf("%d",a[i]);
+            }
+            printf("enter the position:");
+            scanf("%d",&pos);
+            printf("enter the data element:");
+            scanf("%d",&k);
+           for(i=n-1;i>=pos-1;i--)
+            {
+            a[i+1]=a[i];
+            }
+            a[pos-1]=k;
+            printf("elements:");
+            for(i=0;i<=n;i++)
+            {
+             printf("%d",a[i]);
+             }
+             break;
+   case 2:  printf("enter the number of elements:");
+            scanf("%d",&n);
+            printf("enter the desired element:");
+            for(i=0;i<=n-1;i++)
+             {
+             scanf("%d",&a[i]);
+             }
+            printf("entered element:");
+            for(i=0;i<=n-1;i++)
+            {
+            printf("%d",a[i]);
+            }
+            printf("enter the position:");
+            scanf("%d",&pos);
+            for(i=pos-1;i<=n-1;i++)
+            {
+            a[i]=a[i+1];
+            }
+            printf("new elements");
+            for(i=0;i<=n-2;i++)
+            {
+            printf("%d",a[i]);
+            }
+            break;
+  case 3:  printf("enter the number of elements:");
+           scanf("%d",&n);
+           printf("enter the elements");
+           for(i=0;i<=n-1;i++)
+           {
+            scanf("%d",&a[i]);
+           }
+           printf("you entered:");
+           for(i=0;i<=n-1;i++)
+           {
+           printf("%d",a[i]);
+           }
+           break;
+ case 4:  printf("enter the number of elements:");
+          scanf("%d",&n);
+          printf("enter the elements:");
+          for(i=0;i<=n-1;i++)
+          {
+           scanf("%d",&a[i]);
+          }
+          printf("element for search:");
+          scanf("%d",&tosearch);
+          found=0;
+          for(i=1;i<n;i++)
+          {
+          if(a[i]==tosearch)
+           {
+            flag=i;
+           }
+           }
+          if(flag!=0)
+           {
+            printf(" is found at position %d",flag);
+           }
+
+          else
+           {
+            printf("element not found");
+           }
+          break;
+          }
+       }
+}
